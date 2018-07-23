@@ -7,3 +7,4 @@ C:\Users\Nick\source\repos\GameOfLife\GameOfLife\obj\Release\GameOfLife.csproj.G
 C:\Users\Nick\source\repos\GameOfLife\GameOfLife\obj\Release\GameOfLife.csproj.CoreCompileInputs.cache
 C:\Users\Nick\source\repos\GameOfLife\GameOfLife\obj\Release\GameOfLife.exe
 C:\Users\Nick\source\repos\GameOfLife\GameOfLife\obj\Release\GameOfLife.pdb
+C:\Users\Nick\source\repos\GameOfLife\GameOfLife\obj\Release\GameOfLife.csprojAssemblyReference.cache

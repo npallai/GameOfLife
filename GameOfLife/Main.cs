@@ -46,6 +46,11 @@ namespace GameOfLife
                 new Cell(502, 300),
                 new Cell(502, 299),
                 new Cell(501, 298),
+                new Cell(-200, -100), //Glider
+                new Cell(-199, -100),
+                new Cell(-198, -100),
+                new Cell(-198, -101),
+                new Cell(-199, -102),
                 new Cell(600, 200), //Pentadecathlon
                 new Cell(601, 200),
                 new Cell(602, 200),
@@ -67,7 +72,28 @@ namespace GameOfLife
                 new Cell(601, 210),
                 new Cell(600, 211),
                 new Cell(601, 211),
-                new Cell(602, 211)
+                new Cell(602, 211),
+                new Cell(300, 200), //Pentadecathlon
+                new Cell(301, 200),
+                new Cell(302, 200),
+                new Cell(301, 201),
+                new Cell(301, 202),
+                new Cell(300, 203),
+                new Cell(301, 203),
+                new Cell(302, 203),
+                new Cell(300, 205),
+                new Cell(301, 205),
+                new Cell(302, 205),
+                new Cell(300, 206),
+                new Cell(301, 206),
+                new Cell(302, 206),
+                new Cell(300, 208),
+                new Cell(301, 208),
+                new Cell(302, 208),
+                new Cell(301, 209),
+                new Cell(301, 210),
+                new Cell(300, 211),
+                new Cell(301, 211)
             };
 
             return livingCells;
@@ -88,7 +114,6 @@ namespace GameOfLife
             }
 
             picBxMain.Image = _map;
-            picBxMain.Refresh();
         }
 
         private void Btn_Start_Click(object sender, EventArgs e)
