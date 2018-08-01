@@ -11,6 +11,7 @@ namespace GameOfLife
     {
         Universe _universe;
         Bitmap _map;
+        Board _board;
 
         public Main()
         {
@@ -18,6 +19,7 @@ namespace GameOfLife
             
             _universe = new Universe(GetTestingCells());
             _map = new Bitmap(picBxMain.Width, picBxMain.Height);
+            _board = new Board();
         }
 
         private List<Cell> GetTestingCells()
