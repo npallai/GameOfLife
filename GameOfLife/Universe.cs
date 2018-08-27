@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GameOfLife
@@ -8,6 +9,7 @@ namespace GameOfLife
         public Dictionary<string, Cell> _currentLiveGen { get; private set; }
         private Dictionary<string, Cell> _nextLiveGen { get; set; }
         public long Age { get; private set; }
+        public event EventHandler<CellEventArgs> OnCellIsAlive;
 
         public Universe(List<Cell> startingCells)
         {
@@ -36,7 +38,7 @@ namespace GameOfLife
             {
                 CalculateCellNextGen(cell);
             }
-            
+
             _currentLiveGen = new Dictionary<string, Cell>(_nextLiveGen);
             _nextLiveGen.Clear();
         }
@@ -46,7 +48,10 @@ namespace GameOfLife
             if (CellStaysAlive(cell.Value))
             {
                 if (!_nextLiveGen.ContainsKey(cell.Key))
+                {
                     _nextLiveGen.Add(cell.Key, cell.Value);
+                    OnCellIsAlive(this, new CellEventArgs(cell.Value.XLocation, cell.Value.YLocation));
+                }
             }
 
             SpawnNewCells(cell.Value);
@@ -83,6 +88,7 @@ namespace GameOfLife
             if (numOfLiveNeighbors == 3)
             {
                 _nextLiveGen.Add(cell.ToString(), cell);
+                OnCellIsAlive(this, new CellEventArgs(cell.XLocation, cell.YLocation));
             }
         }
 
