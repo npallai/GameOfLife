@@ -5,8 +5,6 @@ using System.Windows.Forms;
 
 namespace GameOfLife
 {
-    //First pass at a GUI. First iteration - display positive space only and bound by the picture box size.
-    //Next step is to make the picture box act as a sliding window over the entire 64bit space.
     public partial class Main : Form
     {
         private Universe _universe;
@@ -18,7 +16,6 @@ namespace GameOfLife
 
             _universe = new Universe(GetTestingCells());
             _universe.OnCellIsAlive += Universe_OnCellIsAlive;
-            //_map = new Bitmap(picBxMain.Width, picBxMain.Height);
         }
 
         private List<Cell> GetTestingCells()
@@ -117,7 +114,7 @@ namespace GameOfLife
 
         private void Universe_OnCellIsAlive(object sender, CellEventArgs e)
         {
-            if (e.XLocation > _map.Width || e.XLocation < 0 || e.YLocation > _map.Height || e.YLocation < 0)
+            if (e.XLocation >= _map.Width || e.XLocation < 0 || e.YLocation >= _map.Height || e.YLocation < 0)
             {
                 return;
             }
