@@ -65,7 +65,7 @@
             // nextGenTimer
             // 
             this.nextGenTimer.Interval = 50;
-            this.nextGenTimer.Tick += new System.EventHandler(this.NextGenTImer_Tick);
+            this.nextGenTimer.Tick += new System.EventHandler(this.NextGenTimer_Tick);
             // 
             // btnStop
             // 

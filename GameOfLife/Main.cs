@@ -99,7 +99,7 @@ namespace GameOfLife
             return livingCells;
         }
 
-        private void NextGenTImer_Tick(object sender, EventArgs e)
+        private void NextGenTimer_Tick(object sender, EventArgs e)
         {
             _map = new Bitmap(picBxMain.Width, picBxMain.Height);
             _universe.Tick();
