@@ -103,5 +103,18 @@ namespace GameOfLife
         {
             return $"{XLocation.ToString("X")},{YLocation.ToString("X")}";
         }
+
+        public override bool Equals(object obj)
+        {
+            return (obj is Cell input) && (XLocation == input.XLocation) && (YLocation == input.YLocation);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 1387378803;
+            hashCode = hashCode * -1521134295 + XLocation.GetHashCode();
+            hashCode = hashCode * -1521134295 + YLocation.GetHashCode();
+            return hashCode;
+        }
     }
 }
