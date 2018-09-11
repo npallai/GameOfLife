@@ -18,7 +18,7 @@ namespace GameOfLife
             AddCells(startingCells);
         }
 
-        public void AddCells(List<Cell> cells)
+        private void AddCells(List<Cell> cells)
         {
             foreach (var cell in cells)
             {
